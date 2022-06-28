@@ -1,0 +1,60 @@
+.tickets-container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tickets-container header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tickets-container header a {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.tickets-container header a svg {
+    margin-right: 16px;
+}
+
+.tickets-container .content {
+    margin: 15px auto;
+    padding: 56px;
+    max-width: 730px;
+    background: #FFF;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.tickets-container .content h1 {
+    font-size: 36px;
+}
+
+.tickets-container .content p {
+    font-size: 16px;
+}
+
+.tickets-container .content fieldset {
+    margin-top: 24px;
+    min-inline-size: auto;
+    border: 0;
+}
+
+.tickets-container .content .field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.tickets-container .content .field label {
+    font-size: 16px;
+    color: #6C6C80;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
