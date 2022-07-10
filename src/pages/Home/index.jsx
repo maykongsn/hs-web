@@ -42,9 +42,9 @@ export function Home() {
                     <p>{ticket.message}</p>
                     <strong>STATUS:</strong>
                     <p>{ticket.status}</p>
-                    <button type="button">
+                    <Link to={`/chat/${ticket.code}`}>
                         <ChatText size={23} color="#737380"/>
-                    </button>
+                    </Link>
                 </li>
             ))}
             </ul>

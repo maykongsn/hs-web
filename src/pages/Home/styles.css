@@ -72,7 +72,7 @@
     margin-top: 32px;
 }
 
-.home-container ul li button {
+.home-container ul li a {
     position: absolute;
     right: 24px;
     top: 24px;
@@ -80,8 +80,3 @@
     background: none;
     transition: opacity 0.2s;
 }
-
-.home-container ul li button:hover{
-    opacity: 0.8;
-}
-

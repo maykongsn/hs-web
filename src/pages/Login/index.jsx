@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { AuthContext } from '../../context/auth';
 import './styles.css';
 
@@ -40,9 +40,6 @@ export default function Login() {
                                 name="password"
                                 onChange={(event) => { setPassword(event.target.value) }} />
                             <button className="button" type="submit">Entrar</button>
-                            <Link className="back-link" to="/register">
-                                Cadastrar-se
-                            </Link>
                         </form>
                     </section>
                 </div>
