@@ -3,11 +3,10 @@ import { Navigate } from 'react-router-dom';
 import { AuthContext } from '../../context/auth';
 import './styles.css';
 
-export default function Login() {
+export function LoginTechnician() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { signIn, signed } = useContext(AuthContext);
-    const type = localStorage.getItem("@Auth:type");
 
     const handleSignIn = async(event) => {
         event.preventDefault();
@@ -19,10 +18,9 @@ export default function Login() {
         await signIn(data);
     }
 
-    if(signed && type === "client") {
-        return <Navigate to="/home" />
+    if(signed) {
+        return <Navigate to="/dashboard" />
     } else {
-        localStorage.clear();
         return (
             <div className="login-container">
                 <div>

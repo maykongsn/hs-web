@@ -10,7 +10,7 @@ export function Tickets() {
     const [message, setMessage] = useState("");
     const [priority, setPriority] = useState("");
     const navigate = useNavigate();
-    const client = JSON.parse(localStorage.getItem("@Auth:client"));
+    const client = JSON.parse(localStorage.getItem("@Auth:user"));
 
     const handleSubmit = (event) => {
         event.preventDefault();

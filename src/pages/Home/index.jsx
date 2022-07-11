@@ -8,7 +8,7 @@ import { AuthContext } from '../../context/auth';
 
 export function Home() {
     const { signOut } = useContext(AuthContext);
-    const user = JSON.parse(localStorage.getItem("@Auth:client"));
+    const user = JSON.parse(localStorage.getItem("@Auth:user"));
     const [tickets, setTickets] = useState([]);
 
     useEffect(() => {

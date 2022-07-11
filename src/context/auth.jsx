@@ -5,15 +5,15 @@ import { api } from "../services/api";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [client, setClient] = useState(null);
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
         const loadingStoreData = async() => {
-            const storageClient = localStorage.getItem("@Auth:client");
+            const storageUser = localStorage.getItem("@Auth:user");
             const storageToken = localStorage.getItem("@Auth:token");
 
-            if(storageClient && storageToken) {
-                setClient(storageClient);
+            if(storageUser && storageToken) {
+                setUser(storageUser);
             }
         };
 
@@ -28,25 +28,33 @@ export const AuthProvider = ({ children }) => {
 
         if(response.data.error) {
             alert(response.data.error);
-        } else {
-            setClient(response.data.client);
+        } else if(response.data.technician) {
+            setUser(response.data.technician);
             api.defaults.headers.common[
                 "Authorization"
             ] = `Bearer ${response.data.token}`;
             localStorage.setItem("@Auth:token", response.data.token);
-            localStorage.setItem("@Auth:client", JSON.stringify(response.data.client));
+            localStorage.setItem("@Auth:user", JSON.stringify(response.data.technician));
+        } else {
+            setUser(response.data.client);
+            api.defaults.headers.common[
+                "Authorization"
+            ] = `Bearer ${response.data.token}`;
+            localStorage.setItem("@Auth:token", response.data.token);
+            localStorage.setItem("@Auth:user", JSON.stringify(response.data.client));
+            localStorage.setItem("@Auth:type", "client");
         }
     }
 
     const signOut = () => {
         localStorage.clear();
-        setClient(null);
+        setUser(null);
         return <Navigate to="/" />
     }
 
     return (
         <AuthContext.Provider value={{
-          client, signed: !!client, signIn, signOut,
+          user, signed: !!user, signIn, signOut,
         }}>
             {children}
         </AuthContext.Provider>
