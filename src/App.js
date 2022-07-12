@@ -8,6 +8,8 @@ import { Home } from "./pages/Home";
 import { Tickets } from "./pages/Tickets";
 import { Chat } from './pages/Chat';
 import { Dashboard } from './pages/Dashboard';
+import { History } from "./pages/History";
+import { ChatTechnician } from "./pages/ChatTechnician";
 import { LoginTechnician } from './pages/LoginTechnician';
 import { PrivateRoute } from "./routes/PrivateRoutes";
 
@@ -21,6 +23,9 @@ function App() {
                     <Route path="/dashboard" element={<PrivateRoute />}>
                         <Route path="/dashboard" element={<Dashboard />} />
                     </Route>
+                    <Route path="/history" element={<PrivateRoute />}>
+                        <Route path="/history" element={<History />} />
+                    </Route>
                     <Route path="/home" element={<PrivateRoute />}>
                         <Route path="/home" element={<Home />} />
                     </Route>
@@ -29,6 +34,9 @@ function App() {
                     </Route>
                     <Route path="/chat/:code" element={<PrivateRoute />}>
                         <Route path="/chat/:code" element={<Chat />} />
+                    </Route>
+                    <Route path="/chat-technician/:code" element={<PrivateRoute />}>
+                        <Route path="/chat-technician/:code" element={<ChatTechnician />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
