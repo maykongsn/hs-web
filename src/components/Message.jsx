@@ -5,8 +5,8 @@ const Message = (props) => {
 
     return (
         <div className="message">
-            <div className="author">
-                <img className="avatar" src="https://github.com/maykongsn.png" />
+            <div className="sender">
+                <div className="avatar"><p>{author.slice(0, 1)}</p></div>
                 <div className="author-info">
                     <strong>{author}</strong>
                 </div>
