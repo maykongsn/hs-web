@@ -32,7 +32,7 @@ export function Chat() {
                 setMessages(response.data);
             })
             .catch((error) => console.log(error));
-    }, []);
+    }, [params.code]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -68,7 +68,7 @@ export function Chat() {
             </header>
             <div className="content">
                 <div className="author">
-                    <img className="avatar" src="https://github.com/maykongsn.png" />
+                <div className="avatar"><p>{author.slice(0, 1)}</p></div>
                     <div className="author-info">
                         <strong>{author}</strong>
                     </div>
