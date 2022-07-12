@@ -8,9 +8,17 @@ import { api } from "../../services/api";
 export function Tickets() {
     const [title, setTitle] = useState("");
     const [message, setMessage] = useState("");
-    const [priority, setPriority] = useState("");
+    const [priority, setPriority] = useState("Baixa");
     const navigate = useNavigate();
     const client = JSON.parse(localStorage.getItem("@Auth:user"));
+
+    const handleChange = (event) => {
+        if(event.target.value.length > 35) {
+            alert('Tamanho máximo de 35 caracteres atingido');
+        } else {
+            setTitle(event.target.value);
+        }
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -56,7 +64,7 @@ export function Tickets() {
                                 placeholder="Título"
                                 value={title}
                                 name="title"
-                                onChange={event => setTitle(event.target.value)}
+                                onChange={handleChange}
                             />
                         </div>
                         <div className="field">
