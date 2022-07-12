@@ -1,0 +1,118 @@
+.chat-container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.chat-container header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-container header a {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.chat-container header a svg {
+    margin-right: 16px;
+}
+
+.chat-container .content {
+    margin: 15px auto;
+    padding: 56px;
+    max-width: 730px;
+    background: #FFF;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-container .author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.chat-container .sender {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.chat-container .author .avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(3rem);
+    height: calc(3rem);
+    border-radius: 8px;
+    background: #835AFD;
+    border: 4px solid white;
+    outline: 2px solid #835AFD;
+}
+
+.chat-container .sender .avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(3rem);
+    height: calc(3rem);
+    border-radius: 8px;
+    background: #835AFD;
+    border: 4px solid white;
+    outline: 2px solid #835AFD;
+}
+
+.chat-container .author .avatar p {
+    margin: 0;
+    color: #FFF;
+    font-size: 24px;
+}
+
+.chat-container .sender .avatar p {
+    margin: 0;
+    color: #FFF;
+    font-size: 24px;
+}
+
+.chat-container .author .author-info strong {
+    display: block;
+    line-height: 1.6;
+}
+
+.chat-container .content p {
+    margin-top: 16px;
+    font-size: 16px;
+}
+
+.chat-container .content h1 {
+    margin-top: 16px;
+}
+
+.chat-container .content .answers {
+    width: 100%;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #dcdce6;
+}
+
+.chat-container .content .answers strong {
+    line-height: 1.6;
+}
+
+.chat-container .content .answers textarea {
+    margin-top: 16px;
+}
+
+.chat-container .content .message {
+    display: block;
+    margin-top: 16px;
+    gap: 1rem;
+    border-radius: 8px;
+    padding: 16px;
+    background: #EEEEEE;
+}
