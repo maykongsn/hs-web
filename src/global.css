@@ -25,6 +25,10 @@ button {
     cursor: pointer;
 }
 
+a:focus {
+    box-shadow: none;
+}
+
 form input {
     width: 100%;
     height: 60px;
