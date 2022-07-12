@@ -1,0 +1,130 @@
+.dashboard-container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 40px 16px;
+}
+
+.dashboard-container header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0;
+}
+
+.dashboard-container header ul {
+    list-style: none;
+    display: flex;
+}
+
+.dashboard-container header ul li a {
+    text-decoration: none;
+    display: block;
+    position: relative;
+    padding: 16px;
+    font-size: 20px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.dashboard-container header ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    width: 0;
+    height: 0.2rem;
+    background: #F05454;
+    transition: all 300ms ease-in-out;
+}
+
+.dashboard-container header ul li a:hover::after {
+    width: 50%;
+    left: 25%;
+}
+
+.dashboard-container header ul button {
+    height: 60px;
+    width: 60px;
+    border-radius: 8px;
+    border: 1px solid #F05454;
+    background: transparent;
+    color: #F05454;
+    margin-left: 16px;
+}
+
+.dashboard-container .panel-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 24px;
+    border-radius: 8px;
+}
+
+.dashboard-container .panel-cards .card {
+    position: relative;
+    padding: 24px;
+    background: #FFF;
+}
+
+.dashboard-container .panel-cards .card h3 {
+    font-weight: normal;
+    color: #41414d;
+    margin-top: 5px;
+}
+
+.dashboard-container .panel-cards .card svg {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+}
+
+.dashboard-container .panel-cards .card strong {
+    display: block;
+    margin-top: 16px;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 48px;
+}
+
+.dashboard-container h3 {
+    margin: 32px 0px;
+    font-size: 20px;
+    color: #585863;
+}
+
+.dashboard-container .table-tickets table {
+    width: 100%;
+    border-spacing: 0 8px;
+}
+
+.dashboard-container .table-tickets th {
+    color: #41414d;
+    font-weight: 500;
+    padding: 1rem 2rem;
+    text-align: left;
+    line-height: 1.5rem;
+}
+
+.dashboard-container .table-tickets td {
+    padding: 1rem 2rem;
+    border: 0;
+    background: #FFF;
+    color: #585863;
+    border-radius: 4px;
+}
+
+.dashboard-container .table-tickets td button {
+    background: transparent;
+    border: none;
+}
+
+.dashboard-container .table-tickets td svg {
+    margin-left: 5px;
+}
+
+.dashboard-container .table-tickets td[colspan="4"] {
+    text-align: center;
+}
