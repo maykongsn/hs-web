@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-import { ChatText, Power } from "phosphor-react";
 
-import './styles.css';
 import { useContext, useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { AuthContext } from '../../context/auth';
+
+import { Power } from "phosphor-react";
+import './styles.css';
+import { Ticket } from '../../components/Ticket';
 
 export function Home() {
     const { signOut } = useContext(AuthContext);
@@ -23,6 +25,14 @@ export function Home() {
         signOut();
     }
 
+    function generateTickets() {
+        if(!tickets.length) return <h3>Nenhum chamado cadastrado</h3>
+
+        return tickets.map((ticket, index) => {
+            return <Ticket ticket={ticket} key={index} />
+        })
+    }
+
     return (
         <div className="home-container">
             <header>
@@ -36,17 +46,7 @@ export function Home() {
             </header>
             <h1>Chamados criados</h1>
             <ul>
-            {tickets.map((ticket, index) => (
-                <li key={index}>
-                    <h3>{ticket.title}</h3>
-                    <p>{ticket.message}</p>
-                    <strong>STATUS:</strong>
-                    <p>{ticket.status}</p>
-                    <Link to={`/chat/${ticket.code}`}>
-                        <ChatText size={23} color="#737380"/>
-                    </Link>
-                </li>
-            ))}
+                {generateTickets()}
             </ul>
         </div>
     )
